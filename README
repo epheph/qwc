@@ -1,0 +1,21 @@
+This is a very specific bash script which gives quick line count results (similar to `wc -l`) by sampling the first few lines of a file (configurable) and dividing into the average of the reported file size. My need for this utility arose when dealing with multi-GB fixed-width data files.
+
+It's worth noting that for fixed-width files, the results of qwc should be identical to "wc -l".
+
+To run, simply run as you would wc -l:
+
+$ qwc data.txt
+2129950
+
+$ qwc -l data.txt
+2129950
+
+
+The "-l" is optional, so you can perform an operation like this (using bash):
+
+$ wc -l data2.txt
+( taking too long, Ctrl+C)
+$ q!! 
+qwc -l data2.txt
+9342447
+
